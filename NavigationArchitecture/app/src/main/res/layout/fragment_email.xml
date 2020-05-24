@@ -10,27 +10,26 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".HomeFragment">
+        tools:context=".EmailFragment">
 
-        <Button
-            android:text="Start"
-            android:id="@+id/start_button"
-            app:layout_constraintBottom_toTopOf="@id/terms_button"
-            app:layout_constraintTop_toTopOf="parent"
+        <EditText
+            android:id="@+id/edt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/submit_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/terms_button"
+            android:id="@+id/submit_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Terms"
+            android:text="Submit"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/start_button"
-            app:layout_constraintStart_toStartOf="@id/start_button"
-            app:layout_constraintTop_toBottomOf="@id/start_button" />
+            app:layout_constraintEnd_toEndOf="@id/edt_email"
+            app:layout_constraintStart_toStartOf="@id/edt_email"
+            app:layout_constraintTop_toBottomOf="@id/edt_email" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

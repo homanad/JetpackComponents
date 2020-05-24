@@ -10,16 +10,26 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".SecondFragment">
+        tools:context=".NameFragment">
 
-        <TextView
-            android:id="@+id/text_view"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/edt_name"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/submit_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/edt_name"
+            app:layout_constraintStart_toStartOf="@id/edt_name"
+            app:layout_constraintTop_toBottomOf="@id/edt_name" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
