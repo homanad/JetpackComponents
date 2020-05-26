@@ -6,66 +6,74 @@
     <data>
 
         <variable
-            name="viewModel"
-            type="com.hmman.roomdemo.SubcriberViewModel" />
+            name="myViewModel"
+            type="com.hmman.roomdemo.SubscriberViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        android:orientation="vertical"
         tools:context=".MainActivity">
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/input_name"
-            android:layout_width="0dp"
+        <EditText
+            android:id="@+id/name_text"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:hint="Subcriber's name"
-            android:text="@={viewModel.inputName}"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_margin="15dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:hint="Subscriber's name"
+            android:inputType="textPersonName"
+            android:text="@={myViewModel.inputName}"
+            android:textStyle="bold" />
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/input_email"
-            android:layout_width="0dp"
+        <EditText
+            android:id="@+id/email_text"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Subcriber's email"
-            android:text="@={viewModel.inputEmail}"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@id/input_name"
-            app:layout_constraintStart_toStartOf="@id/input_name"
-            app:layout_constraintTop_toBottomOf="@id/input_name" />
+            android:layout_margin="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:hint="Subscriber's email"
+            android:inputType="textPersonName"
+            android:text="@={myViewModel.inputEmail}"
+            android:textStyle="bold" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button_save_or_update"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="@{()->viewModel.saveOrUpdate()}"
-            android:text="@={viewModel.saveOrUpdateButtonText}"
-            app:layout_constraintStart_toStartOf="@id/input_email"
-            app:layout_constraintTop_toBottomOf="@id/input_email" />
+            android:orientation="horizontal">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button_clear_all_or_delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="@{()->viewModel.clearAllOrDelete()}"
-            android:text="@={viewModel.clearAllOrDeleteButtonText}"
-            app:layout_constraintStart_toEndOf="@id/button_save_or_update"
-            app:layout_constraintTop_toTopOf="@id/button_save_or_update" />
+            <Button
+                android:id="@+id/save_or_update_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{()->myViewModel.saveOrUpdate()}"
+                android:text="@={myViewModel.saveOrUpdateButtonText}"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/clear_all_or_delete_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{()->myViewModel.clearAllOrDelete()}"
+                android:text="@={myViewModel.clearAllOrDeleteButtonText}"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview_subcriber"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_save_or_update" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:id="@+id/subscriber_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp" />
+    </LinearLayout>
 </layout>
