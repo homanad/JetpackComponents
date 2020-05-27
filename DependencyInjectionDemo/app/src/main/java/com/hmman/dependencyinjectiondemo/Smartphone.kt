@@ -2,8 +2,9 @@ package com.hmman.dependencyinjectiondemo
 
 import android.util.Log
 import javax.inject.Inject
+import javax.inject.Singleton
 
-
+@Singleton
 class Smartphone @Inject constructor(
     val battery: Battery,
     val simCard: SIMCard,

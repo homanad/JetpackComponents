@@ -16,10 +16,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        DaggerSmartphoneComponent.create()
-            .inject(this)
+//        DaggerSmartphoneComponent.create()
+//            .inject(this)
+//        smartPhone.makeACallWithRecording()
 
-        smartPhone.makeACallWithRecording()
 //        simCard.getConnection()
+
+//        DaggerSmartphoneComponent.builder()
+//            .memoryCardModule(MemoryCardModule(1024))
+//            .build()
+//            .inject(this)
+
+        (application as SmartphoneApplication).smartPhoneComponent
+            .inject(this)
+        smartPhone.makeACallWithRecording()
     }
 }
